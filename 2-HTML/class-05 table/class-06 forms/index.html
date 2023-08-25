@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>CHALLENGE Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: rgb(206, 232, 224);
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        form {
+            display: block;
+            margin: 0 auto;
+            max-width: 500px;
+            padding: 20px;
+        }
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            display:block;
+            font-size: 16px;
+            margin-bottom: 10px;
+            padding: 12px 20px;
+            width: 100%;
+        }
+        input[type="reset"] {
+            background-color: #435443;
+            border-radius: 3px;
+            border:none;
+            color:white;
+            cursor:pointer;
+            font-size:18px;
+            padding:8px 11px
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            border-radius: 5px;
+            border:none;
+            color:white;
+            cursor:pointer;
+            font-size:18px;
+            padding:12px 20px
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Alunos</h1>
+    </header>
+    <form>
+        <fieldset>
+            <legend>Dados Pessoais:</legend>
+            <strong><label for="name">Nome:</label><br>
+                <input type="text" id="name" name="name"
+                placeholder=
+                "Digite seu nome"></strong><br>
+
+                <strong><label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email"
+                    placeholder=
+                    "seuemail@E-mail.com"></strong><br>
+
+                    <strong><section><label for="image">imagem</label>
+                        <input type="file"
+                        id="imagem"
+                        name="image"
+                        value="image"></strong><br>
+                                                   <br>
+                                                       </br>
+                    
+                        
+                        <strong><label for="phone">Phone:</label><br>
+                            <input type="tel" id="phone" name="phone"
+                            placeholder=
+                            "Digite seu Número de telefone"></strong><br>
+                            
+                            <strong><label for="CPF">CPF:</label><br>
+                                <input type="tel" id="CPF" name="CPF"
+                                placeholder=
+                                "Digite seu CPF"
+                                maxlength="11"
+                                minlength="0"
+                                pattern="[0-9][11]"></strong><br>
+                                
+                                <strong><label for="RG">RG:</label><br>
+                                    <input type="tel" id="RG" name="RG"
+                                    placeholder=
+                                    "Digite seu RG"></strong><br>
+                                    
+                                    <strong> <label for="dob">Date of Birth:</label><br>
+                                        <input type="date" id="dob" name="dob"></strong><br>
+                                    </section>
+
+<strong><label for="address">Address:</label><br>
+    <textarea 
+    id="address" 
+    name="address"
+    placeholder="Digite seu endereço"></textarea></strong>
+                <br>
+
+         </fieldset>
+
+         <section>
+            <div>
+                <strong><label for="sexo:">SEXO:</label></strong><br>
+                <span>
+                <label for="feminine">Feminino</label>
+                <input type="radio"
+                id="feminine"
+                name="sexo"
+                value="W"
+                required>
+                <label for="masculine">Masculino</label>
+                <input type="radio"
+                id="masculine"
+                name="sexo"
+                value="M"
+                required>
+            </div>
+         </span>
+
+
+         </section>
+
+         <fieldset>
+        <strong>
+            <legend>Linguagens de domínio:</legend>
+        </strong>
+            
+
+<section>
+
+    <div style="display: flex; flex-wrap: wrap;">
+
+    <div style="flex-basis: 50%;">
+        <input type="checkbox" id="html" name="language" value="html">
+        <label for="html">HTML</label><br>
+    </div>
+
+    <div style="flex-basis: 50%;">
+        <input type="checkbox" id="Python" name="language" value="Python">
+        <label for="Python">Python</label><br>
+    </div>
+
+    <div style="flex-basis: 50%;">
+        <input type="checkbox" id="JAVA" name="language" value="JAVA">
+        <label for="JAVA">Java</label><br>
+    </div>
+
+    <div style="flex-basis: 50%;">
+        <input type="checkbox" id="CSS" name="language" value="CSS">
+        <label for="CSS">CSS</label><br>
+    </div>
+
+    <div style="flex-basis: 50%;">
+        <input type="checkbox"
+         id="Java script"
+         name="language"
+         value="Java script">
+        <label for="Java script">Java script</label>
+            <br>
+        </div>
+   
+</section>
+         <strong>
+        Other:
+        <input type=text id=other_language name=other_language><br>
+    </fieldset>
+         </strong>   
+           
+        
+        <fieldset>
+            <legend>Observations:</legend>
+            <textarea id=observations name=observations></textarea><br>
+        </fieldset>
+        
+        <input type=submit value=Enviar>
+        <input type="reset" value="reset">
+        
+    </form>
+</body>
+</html>
+ 

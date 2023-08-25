@@ -1,0 +1,54 @@
+:root {
+    font-size: 1rem;
+
+}
+main{
+    max-width: 42rem;
+    margin: auto;
+    padding: 2.4rem;
+}
+
+h1{
+    font-size: 1rem;
+}
+.boximage{
+    max-width: 42rem;
+
+}
+
+
+img{
+    width: 42rem;
+    height: 21rem;
+    aspect-ratio: 3/1;
+    object-fit: cover;
+    object-position: right;
+}
+/* 1 rem equivale a 16px 
+dependendo do browser
+ou tamanho minimo da fonte*/
+p{
+    font-size: 20px;
+}
+
+div{
+    font-size: 2rem;
+}
+
+@media {max-width: 1000px;} {
+    main{
+        background: orange;
+    }
+    
+}
+@media { max-width: 420px;} {
+    main {
+        background: purple;
+    }
+
+    img{
+        
+    }
+    
+    
+}

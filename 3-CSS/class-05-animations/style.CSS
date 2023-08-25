@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+h1 {
+    animation: topdown 1s;
+}
+
+p {
+    animation: fadeIn 1s;
+}
+
+
+
+
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 20px solid rgb(255, 255, 255, 0.127);
+    border-top-color: #09d;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg)
+        ;
+    }
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        form {
+            width: 300px;
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form method="get">
+
+        <input type="number"
+        placeholder="Digite sua idade"
+        max="10"
+        min="0"
+        >
+
+        <br><br>
+
+        <input type="datetime-local" name="" id="">
+
+        <br><br>
+
+        <input type="range"
+        max="10"
+        min="0"
+        value="4"
+        step="2">
+        
+        <br><br>
+
+        <input type="file"
+        accept="jpg"
+        multiple
+        >
+        
+        <input type="color"
+        value="#ff0000"
+        >
+
+        <datalist id="group color">
+          <option value="#ff0000"></option>
+          <option value="#00ff00"></option>
+          <option value="#00ff"></option>
+          <option value="#ff0"></option>
+          <option value="#f70"></option>
+          <option value="#159100"></option>
+        </datalist>
+
+      <br><br>
+
+      <label for="html">HTML</label>  
+      <input type="checkbox" id=html>
+
+      <label for="css">CSS</label>
+      <input type="checkbox" id=CSS>
+
+      <label for="yes">SIM</label>
+      <input type="radio" name="term" id="yes">
+
+      <label for="no">NÃO</label>
+      <input type="radio" name="terms" id="no">
+
+      <label for="fruits"></label>
+      <select name="fruits" id="">
+        
+          <option value="">--Selecione uma fruta--</option>
+          <option value="manga">manga</option>
+          <option value="acelora">acelora</option>
+          <option value="">mãe casada</option>
+      </select>
+
+      <br>
+
+      <label for="">Observações:</label><br>
+      <textarea name="" id="" cols="" rows="" maxlength=""></textarea>
+
+      <button>Enviar</button> 
+    </form>
+</body>
+</html>
