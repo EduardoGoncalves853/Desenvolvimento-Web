@@ -37,7 +37,7 @@ switch (averageStudentABC) {
     break;
 
   case "F":
-    console.log("Precisa estudar mais, reprovado com D!");
+    console.log("faltou pra krai, reprovado com F!");
     break;
 
   case "Média invalida":
