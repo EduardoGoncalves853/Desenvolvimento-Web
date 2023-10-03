@@ -17,5 +17,29 @@ function convertAverageToABC(average) {
   }
 }
 
-const averageStudent = 85;
-console.log(convertAverageToABC(averageStudent));
+const averageStudent = 36;
+const averageStudentABC = convertAverageToABC(averageStudent);
+
+switch (averageStudentABC) {
+  case "A":
+    console.log("Excelente, aprovado com A!");
+    break;
+  case "B":
+    console.log("Muito bem, aprovado com B!");
+    break;
+
+  case "C":
+    console.log("aprovado com C!");
+    break;
+
+  case "D":
+    console.log("Foi quase, reprovado com D!");
+    break;
+
+  case "F":
+    console.log("Precisa estudar mais, reprovado com D!");
+    break;
+
+  case "Média invalida":
+    console.log("ABC, Nota inválida")
+}
