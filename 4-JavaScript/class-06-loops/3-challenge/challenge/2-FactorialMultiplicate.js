@@ -34,12 +34,12 @@ function calcularFatorial(numero) {
     }
 }
 
-  //* Exemplo de uso:
+  // Ex:
 
 const numero1 = prompt('Digite um número:');
 if (numero1 === null) {
     alert('ta querendo me lascar é?');
-}else if (numero1 === "" || numero1 === " "){
+}else if (numero1 === "" || " "){
     alert('Não consigo ver nada')
 } else {
     const resultado1 = calcularFatorial(parseInt(numero1, 10));

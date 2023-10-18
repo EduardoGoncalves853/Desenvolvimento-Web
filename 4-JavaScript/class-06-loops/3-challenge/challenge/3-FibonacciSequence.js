@@ -1,10 +1,12 @@
 function calcularFibonacci(numero) {
   if (numero < 0) {
-    return "A sequência menor que 0 não existe";
+    return "não existe, seu guei, quer complicar as coisa";
   } else if (numero === 0) {
     return "0"; //* A sequência com 0 começa com 0
   } else if (numero === 1) {
     return "0, 1"; //* A sequência com 1 começa com 0 e 1
+  } else if (numero === "" || " "){
+    alert("dodin dos pão você")
   } else {
     let fibonacci = [0, 1];
 
@@ -13,15 +15,19 @@ function calcularFibonacci(numero) {
       fibonacci.push(nextFib);
     }
 
-    return fibonacci.join(',');
+    return fibonacci.join(", ");
   }
 }
+ 
+const numero = prompt("Digite um número:");
 
-const numero = prompt('Digite um número:');
+
 if (numero === null) {
-  alert('Xiiiiii');
+  alert("Xiiiiii");
 } else {
   const resultado1 = calcularFibonacci(parseInt(numero, 10));
   alert(`A sequência de Fibonacci de ${numero} é ${resultado1}`);
   console.log(`A sequência de Fibonacci de ${numero} é ${resultado1}`);
 }
+
+
