@@ -8,15 +8,15 @@
 //TODO   }  
 
 //? inicialização: É a parte onde você define uma variável e atribui
-//?  um valor inicial a ela. Isso é executado apenas uma vez, no início do loop.
+//*  um valor inicial a ela. Isso é executado apenas uma vez, no início do loop.
 
 //? condição: É uma expressão que é avaliada a cada iteração do loop. Se a condição
-//?  for verdadeira, o código dentro do loop é executado. Se for falsa, o loop
-//?   é interrompido e a execução continua após o loop.
+//*  for verdadeira, o código dentro do loop é executado. Se for falsa, o loop
+//*   é interrompido e a execução continua após o loop.
 
 //? incremento: É uma expressão que é executada após cada iteração do loop.
-//?  Geralmente, é usado para atualizar a variável definida na inicialização,
-//?   de modo que, eventualmente, a condição se torne falsa e o loop seja interrompido.
+//*  Geralmente, é usado para atualizar a variável definida na inicialização,
+//*   de modo que, eventualmente, a condição se torne falsa e o loop seja interrompido.
 
 function calcularFatorial(numero) {
   
