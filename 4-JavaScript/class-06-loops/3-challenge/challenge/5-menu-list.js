@@ -101,7 +101,7 @@ while (true) {
 if (ItemNameToRemoved === null) break;
 
 ItemNameToRemoved = ItemNameToRemoved.trim().split(" ").filter(Boolean).join(" ")
-          
+     
 if (ItemNameToRemoved === "") {
   alert("Por favor, inserir nome para remover");
   continue;
@@ -112,7 +112,7 @@ if (listItens.includes(ItemNameToRemoved)) {
   listItens.splice(listItens.indexOf(ItemNameToRemoved), 1)
   alert(`${ItemNameToRemoved} foi removido com sucesso!`)
 
- //* else caso o não encontre o Item pelo nome 
+ //* else caso o não encontre o Item pelo nome
 } else {
   alert("Item não encontrado!")
 }
@@ -123,7 +123,7 @@ if (listItens.includes(ItemNameToRemoved)) {
   }
 
 //todo 4 - Sair do programa
-  
+
   if (menuOption === "4" || menuOption === null) {
     break;
   }
@@ -133,6 +133,5 @@ if (listItens.includes(ItemNameToRemoved)) {
     continue;
   }
 }
-
 
 alert("Programa encerrado!");
