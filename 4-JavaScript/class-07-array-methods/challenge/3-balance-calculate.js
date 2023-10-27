@@ -17,7 +17,7 @@ const expenses = [
   "food",
   "R$ 1300,62",
   "Cabaré da Vanda",
-  "R$ 898,94"
+  "R$ 898,95"
 ];
 
 //? o que é replace?
@@ -63,16 +63,28 @@ const expenseValuesNumber = expenseValues.map((value) => {
 
 const SumExpenses = expenseValuesNumber.reduce((a, b) => a + b);
 
+function CalculateExpenses(saldo){
+  return "R$" + SumIncomes - SumExpenses + ",00"
+};
 
+//*
 let situation;
 
+alert(`Suas despezas são R$${SumExpenses},00 reais`);
+alert(`Suas Despezas: R$${SumExpenses} e sua Receita Bruta: R$${SumIncomes}`);
+
 if (SumIncomes > SumExpenses) {
-    situation = "Saldo positivo!";
+  alert("Saldo positivo!");
 } else if (SumIncomes < SumExpenses){
-    situation = "Saldo negativo!";
+  alert("Saldo negativo!");
 } else if (SumIncomes === SumExpenses) {
-    situation = "Sem saldo mas sem dívidas!";
+  alert("Sem saldo mas sem dívidas!");
 }
+//*
+
+
+
+
 
 
 //todo
