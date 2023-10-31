@@ -18,7 +18,7 @@ function calcularFibonacci(numero) {
     return fibonacci.join(", ");
   }
 }
- 
+
 const numero = prompt("Digite um número:");
 
 
