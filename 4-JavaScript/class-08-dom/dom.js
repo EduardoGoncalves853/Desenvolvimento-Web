@@ -39,5 +39,7 @@ sumButton.addEventListener("click", sumNumber);
 
 num1.addEventListener("keyup", () => {
     console.log(num1.value);
-}); 
+});
+
+
  
