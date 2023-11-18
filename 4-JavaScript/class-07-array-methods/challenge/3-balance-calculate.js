@@ -22,7 +22,7 @@ const expenses = [
 
 //? o que é replace?
 //* replace serve para recolocar objetos de um array, ou seja,usando como :
-//todo  
+  
 
 //!
 const incomeValues = incomes.filter((value) => Number(value.replace("R$", "").replace(",", "")));
