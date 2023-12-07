@@ -27,8 +27,8 @@ function calcularFatorial(numero) {
       return 1; //* O fatorial de 0 e 1 é 1
     } else {
       let fatorial = 1;
-      for (let i = 2; i <= numero; i++) {
-        fatorial *= i; //* Multiplica o fatorial pelo número atual do loop
+      for (let x = 1; x <= numero; x++) {
+        fatorial *= x; //* Multiplica o fatorial pelo número atual do loop
       }
       return fatorial;
     }

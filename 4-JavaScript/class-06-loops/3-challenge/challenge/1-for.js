@@ -9,20 +9,7 @@
 //!   console.log(count);
 // }
 
-// const myArray = ["A", 2, {}, () => {}];
-// const ArrayBid = [
-//   ["A", "B", "C"],
-//   [1, 2, 3],
-// ];
 
-// for (let i = 0; i < ArrayBid.length; i++) {
-//   for (let j = 2; j < ArrayBid[i].length; j++) {
-//     for (let k = 0; k < ArrayBid[i], [j], [j]; k++) {
-//       console.log(ArrayBid[i], [j]);
-//     }
-//   }
-//   console.log(ArrayBid[i][j]);
-// }
 const myArray = ["A","B","C"];
 const arrayBid = [
     ["A","B","C"],

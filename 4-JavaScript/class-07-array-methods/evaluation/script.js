@@ -112,20 +112,45 @@ console.log("_______________________________________");
 // E por velocidade baixa ( quando estiver inferior à metade da máxima )
 // A velocidade da pista é de 60km/h
 
+//* MiniRPG
+function MiniRPG(player){
+if (player === 2) {
+  return "player foi pra cima";
+  
+} else if (player === 3) {
+  return "player andou para baixo";
+
+} else if (player === 4) {
+  return "player andou para a direita";
+
+} else if (player === 1) {
+  return "player andou para a esquerda";
+}
+
+}
+
+console.log(MiniRPG(3));
+
+console.log("_______________________________________");
+
 function CheckVel(VelMotorista, VelPermitida) {
   const VelMotoristaCalculate = VelPermitida / 2;
-
+  
   if (VelMotorista > 100) {
     return "MINHAAA MULEEERRRR!!";
+
   } else if (VelMotorista < VelMotoristaCalculate) {
     return "E é uma tartaruga é? kkkkkkk";
+
   } else if (VelMotorista > VelPermitida) {
     return "VAI CORTAR GIRO PRA LÁ SEM MÃE!";
+
   } else {
     return "Ta dentro cumpade, pode passar";
+
   }
 }
-console.log(CheckVel(65, 60));
+console.log(CheckVel(50, 60));
 
 console.log("_______________________________________");
 
@@ -148,26 +173,8 @@ console.log(
 );
 
 console.log("_______________________________________");
-
+//Soma dos salários
 const salary = [2000, 2800, 3000, 4000, 2200, 7500, 3650, 8000, 2000, 5000];
-
-// const newSalary = salary.map((salary) => salary * 1.1);
-// console.log(newSalary);
-
-// const SalaryReduced = newSalary.reduce(
-//   (a,
-//   (b) => {
-//     a + b;
-//   })
-// );
-// let count1 = 0;
-// let valorS = 0;
-// while (count1 <= salary.length) {
-
-//     valorS = Number(salary[count1] + valorS);
-//     count1++;
-// }
-// console.log(valorS);
 
 let b = 0;
 for (let index = 0; index < salary.length; index++) {
