@@ -1,4 +1,5 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { UserCard } from "./components/UserCard";
 
 // Tipagem
 type UserData = {
@@ -9,7 +10,8 @@ type UserData = {
 
 export function App() {
   const [count, setCount] = useState(0);
-  const [name, setName] = useState("EmanuelQuintino");
+  const [name, setName] = useState("Joao-Pedro-de-Souza-dos-Santos");
+  const [auxName, setAuxName] = useState("Joao-Pedro-de-Souza-dos-Santos");
   const [data, setData] = useState<UserData>({} as UserData);
 
   function AddCount() {
@@ -21,14 +23,20 @@ export function App() {
     setName(event.target.value);
   }
 
+  function handleSubmit(event: FormEvent) {
+    event?.preventDefault(); 
+    setAuxName(name);
+  }
+
   useEffect(() => {
     // hook
-    fetch("https://api.github.com/users/${name}")
+    fetch("https://api.github.com/users/${auxName}")
       .then((response) => response.json())
       .then((data) => setData(data));
+      
 
     console.log("Effect");
-  }, [name]);
+  }, [auxName]);
 
   console.log(data);
 
@@ -38,15 +46,19 @@ export function App() {
       <p>Name:{name}</p>
       <p>Count:{count}</p>
       <button onClick={AddCount}>Add&gt;</button>
-      <input type="text" onChange={handleChangeName} />
+      <form
+        onSubmit={handleSubmit}
+        style={{ textAlign: "center", marginTop: 24 }}
+      >
+        <input type="text" onChange={handleChangeName} />
+        <button>Pesquisar</button>
+      </form>
 
-      {data && (
-        <section>
-          <h2>{data.name}</h2>
-          <img src={data.avatar_url} alt="" />
-          <p>{data.bio}</p>
-        </section>
-      )}
-    </>
-  );
+
+  {data && (<UserCard/>)}
+  
+</>
+
+)
 }
+
