@@ -48,7 +48,7 @@ ORDER BY age DESC;
 ALTER TABLE students
 ADD COLUMN city TEXT;
 
--- add coluna (sex) e "Masculino" como NOT NULL
+-- add coluna (sex), "Masculino" como DEFAULT (padrão)
 ALTER TABLE students
 ADD COLUMN sex TEXT
 NOT NULL DEFAULT "Masculino";
@@ -56,7 +56,7 @@ NOT NULL DEFAULT "Masculino";
 ALTER TABLE students
 ADD COLUMN cpf 
 
--- Deletar
+-- Deletar coluna
 ALTER TABLE students
 DROP COLUMN city;
 
