@@ -1,17 +1,11 @@
 let num = "Global";
-var num;// hoinsting V. //
-// const PI = 3.14;
+const PI = 3.14;
 
-console.log(num);
+
+Function(local){
+    const PI = 5;
+    return(console.log(local(PI)));
+
+};
+
 // console.log(PI);
-
-
-{
-    let num = "Local";
-    // const PI = 5;
-
-    // console.log(num);
-    // console.log(PI);
-}
-
-console.log(num);// console.log(PI);

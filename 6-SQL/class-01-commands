@@ -1,0 +1,63 @@
+-- DDL
+CREATE TABLE IF NOT EXISTS students(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name TEXT NOT NULL,
+  cpf TEXT NOT NULL UNIQUE,
+  age NUMERIC
+);
+
+
+-- DML
+--insira em students os VALORES -->
+INSERT INTO students (name, age, cpf, city)
+VALUES 
+("Eduardo", 19, "123.123.123-02", "Jucás"),
+("Jorge", 34, "123.123.123-02", "Iguatu"),
+("Maurício", 21, "123.123.123-00", "Jucás");
+
+UPDATE students
+SET age = 29 
+WHERE id = 11;
+
+UPDATE students
+SET city = "Saboeiro"
+WHERE id = 13;
+
+
+-- DQL
+-- selecione de students
+SELECT * FROM students;
+
+-- Selecionar idade se (age)
+-- for maior que 13 ou id for igual 16
+SELECT name, age
+FROM students
+WHERE age > 13 OR id = 16;
+
+-- SELECIONE de students
+-- ONDE (age) maior que 18
+-- em ORDEM decrescente
+SELECT * FROM students
+WHERE age > 18
+ORDER BY age DESC;
+
+
+-- DDL
+ALTER TABLE students
+ADD COLUMN city TEXT;
+
+ALTER TABLE students
+ADD COLUMN sex TEXT
+NOT NULL DEFAULT "Masculino";
+
+ALTER TABLE students
+ADD COLUMN cpf 
+
+--123.123.123-12
+
+ALTER TABLE students DROP COLUMN city;
+
+-- challenge DML
+
+UPDATE students
+SET city = "Jucás";

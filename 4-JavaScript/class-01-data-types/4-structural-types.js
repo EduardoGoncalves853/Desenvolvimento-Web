@@ -14,6 +14,9 @@ let pokemon = {
   special: () => "hydropump",
 };
 
+// A função typeof mostra o que a por trás da variável,
+// ex: nameStudent recebe "Eduardo", que no caso volta como string
+
 console.log(pokemon);
 console.log(typeof pokemon);
 console.log(pokemon.name);
