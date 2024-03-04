@@ -29,7 +29,6 @@ if (junior >= 400) {
 
 //todo 2
 
-
 var JuniorProfessor = prompt(
     `Digite o quanto de café em "ml" 
     junior e seu professor 
