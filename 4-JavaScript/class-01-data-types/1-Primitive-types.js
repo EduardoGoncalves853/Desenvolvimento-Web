@@ -24,8 +24,8 @@ let Number2 = "5";
 console.log(Number1 + Number2)
 
 //? (Boolean)
-//* é usado para fazer perguntas a  
-//* maquina onde o resultado esperado pode ser true ou false
+//* É usado para fazer perguntas a  
+//* máquina onde o resultado esperado pode ser true ou false
 //* ⬇
 
 let IsStudenInCvt = true;

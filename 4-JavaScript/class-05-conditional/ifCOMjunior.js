@@ -14,14 +14,18 @@
 //todo 1
 
 
-var junior = prompt(`Digite o quanto de "ml" junior vai tomar de café`);
+var junior = Number(prompt(`Digite o quanto de "ml" junior vai tomar de café`));
 
+
+if (junior < 0) throw new Error ("não é possível beber MLs negativos");
 if (junior >= 400) {
     alert(`Dia produtivo`);
-} else {
+
+} else if (junior < 400 || junior >= 0){
     alert(`João pedro, ou seja, desempregado, fudido e lascado
     e preguiçoso, João pedro solta os minino`);
 }
+
 
 //todo 2
 
