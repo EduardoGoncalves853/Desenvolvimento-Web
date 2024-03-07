@@ -29,16 +29,16 @@ function degreeConvert(degree) {
             return convertFahrenheitToCelsius() + "C";
         default :
             throw new error ("Escala não identificada")
+        }
     }
 
-    console.log(degree);
-    console.log(degreeAux);
-    console.log(arraydegree);
-    console.log(scaleDegree);
-    console.log(newDegree);
-    return "test";
-}
-
+console.log(degree);
+// graus
+console.log(degreeAux);
+// tira espeços desneçessários
+console.log(arraydegree);
+console.log(scaleDegree);
+console.log(newDegree);
     
 
 
