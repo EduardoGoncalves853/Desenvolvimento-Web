@@ -1,9 +1,8 @@
-const a2 = prompt(`digite para o cateto oposto`)
-alert(`seu cateto oposto é ${a2}`)
-const b2 = prompt(`digite para o cateto adjescente`)
-alert(`seu cateto adjascente é ${b2}`)
-let h;
+// Teorema de pitágoras
 
+const a2 = prompt(`digite para o cateto oposto`);
+const b2 = prompt(`digite para o cateto adjescente`);
+let h;
 
 function Teorema(a, b) {
     return Math.pow(a, 2) + Math.pow(b, 2);;
@@ -12,7 +11,6 @@ function Teorema(a, b) {
 function TirarRaíz(c2) {
     return Math.sqrt(c2);
 }
-
 
 const SomaDosCatetos = parseFloat(Teorema(a2, b2));
 const hipotenusa = parseFloat(TirarRaíz(Teorema(a2, b2)));

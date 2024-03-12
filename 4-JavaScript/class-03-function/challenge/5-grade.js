@@ -1,6 +1,8 @@
 
-let grade1 = 6;
+// Calcular médias
+
+let grade1 = 8;
 let grade2 = 8;
+const averageGrade = (grade1, grade2) => (grade1 + grade2) / 2;
 
-(grade1, grade2) => {return result = grade1 + grade2;}
-
+console.log(averageGrade(grade1, grade2));
