@@ -15,4 +15,3 @@ app.listen(port, () => {
 });
 // o Express cria um servidor HTTP interno.
 //* ↑ assim que o servidor estiver escutando, a função será chamada.
-
