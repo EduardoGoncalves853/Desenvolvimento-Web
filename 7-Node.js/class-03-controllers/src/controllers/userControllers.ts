@@ -7,7 +7,7 @@ export const userControllers = {
 
       if (id && name && age) {
         // erro sync ↓
-        console.log(a);
+        // console.log(a);
         return res.status(201).json({ status: `user ${id} created!` });
       }
       // erro async ↓
