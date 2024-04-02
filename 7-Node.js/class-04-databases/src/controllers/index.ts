@@ -1,26 +1,55 @@
 import { Request, Response, NextFunction } from "express";
-import { sqliteConnection } from "../databases/sqlite3";
-import { compare, hash } from "bcrypt";
+import { compare } from "bcrypt";
 import { userRepository } from "../repositories/userRepository";
+import { number, z } from "zod";
 
 export const userControllers = {
   async create(req: Request, res: Response, next: NextFunction) {
     try {
-      const { name, email, password } = req.body;
+      const userSchema = z.object({
+        name: z
+          .string({
+            required_error: "Não tem nome não é?",
+            invalid_type_error: "Só texto minino dos ói grande!",
+          })
+          .min(3, "Mínimo  de 3 caracteres!"),
+
+        email: z
+          .string({
+            required_error: "email obrigatório!",
+            invalid_type_error: "Somente texto!",
+          })
+          .email({ message: "Email inválido!" }),
+
+        password: z
+          .string({
+            required_error: "Senha obrigatória!",
+            invalid_type_error: "Para a senha use o tipo textual!",
+          })
+          .min(7, { message: "Senha com mínimo de 7 caracteres " })
+          .regex(
+            /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+            {
+              message:
+                "A senha  deve conter pelo menos uma letra maiúscula, um número e um caractere especial",
+            }
+          ),
+      })
+      .strict();
+
+      const { name, email, password } = userSchema.parse(req.body);
+      return res.json({ name, email, password });
 
       const userEmail = await userRepository.getByEmail(email);
-
       if (userEmail)
         throw res.status(400).json({
           message: "email already exists",
         });
-
       const userCreated = await userRepository.create({
         name,
         email,
         password,
       });
-
       return res.status(201).json({ message: "created!", ...userCreated });
     } catch (error) {
       return next(error);

@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from "express";
+import { ZodError } from "zod";
 
 type AppErrors = {
   message: string;
@@ -12,7 +13,10 @@ export function appErros(
   _next: NextFunction
 ) {
   console.error("middleware error -", error);
-  res
+  if (error instanceof ZodError) {
+    return res
     .status(error.status || 500)
-    .json({ message: error.message || "server error" });
+    .json({ message: JSON.parse(error.message)[0].message || "server error" });
+  }
+  return res
 }
