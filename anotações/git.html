@@ -14,62 +14,106 @@
 
       <div class="container">
         <ol start="0">
+          <!-- Verifica a versão do Git -->
           <li>git --version</li>
+          <!-- Inicializa um novo repositório Git -->
           <li>git init</li>
+          <!-- Remove o repositório Git -->
           <li>rm -rf .git</li>
+          <!-- Configura o nome do usuário no Git -->
           <li>git config --global user.name "Emanuel Quintino"</li>
+          <!-- Configura o email do usuário no Git -->
           <li>git config --global user.email "emanuelquintino@hotmail.com"</li>
+          <!-- Configura o editor padrão do Git -->
           <li>git config --global core.editor "code -w"</li>
+          <!-- Remove uma configuração global do Git -->
           <li>git config --global --unset use.email</li>
+          <!-- Lista as configurações globais do Git -->
           <li>git config --list --global</li>
+          <!-- Lista as configurações locais do Git -->
           <li>git config --list --local</li>
+          <!-- Verifica o status do repositório Git -->
           <li>git status (Working Directory, Stage Area, Repository(Logs))</li>
+          <!-- Adiciona todos os arquivos ao stage do Git -->
           <li>git add .</li>
+          <!-- Remove um arquivo do stage do Git -->
           <li>git rm --cached (add file name)</li>
+          <!-- Restaura os arquivos do diretório de trabalho -->
           <li>git restore .</li>
+          <!-- Restaura os arquivos do stage -->
           <li>git restore --staged .</li>
+          <!-- Realiza um commit no Git -->
           <li>git commit -m "first commit"</li>
+          <!-- Altera a mensagem do último commit -->
           <li>git commit --amend -m "new message"</li>
+          <!-- Desfaz o último commit e mantém as alterações no stage -->
           <li>git reset --soft HEAD~1</li>
+          <!-- Desfaz os dois últimos commits e descarta as alterações -->
           <li>git reset --hard HEAD~2</li>
+          <!-- Exibe o log de commits -->
           <li>git log</li>
+          <!-- Exibe os três últimos commits -->
           <li>git log -n 3</li>
+          <!-- Exibe as diferenças entre os commits -->
           <li>git diff</li>
+          <!-- Renomeia a branch atual para main -->
           <li>git branch -M main</li>
+          <!-- Adiciona um repositório remoto ao Git -->
           <li>git remote add origin (add address)</li>
+          <!-- Remove um repositório remoto do Git -->
           <li>git remote remove origin (add address)</li>
+          <!-- Consulta os repositórios remotos do Git -->
           <li>git remote --v (consult remote address)</li>
+          <!-- Faz um push para a branch main do repositório remoto -->
           <li>git push -u origin main</li>
+          <!-- Faz um push para o repositório remoto -->
           <li>git push</li>
+          <!-- Atualiza o repositório local com as alterações do repositório remoto -->
           <li>git pull</li>
+          <!-- Clona um repositório remoto -->
           <li>git clone (add link)</li>
+          <!-- Lista as branches do repositório Git -->
           <li>git branch</li>
+          <!-- Cria uma nova branch no repositório Git -->
           <li>git branch (branch name)</li>
+          <!-- Deleta uma branch do repositório Git -->
           <li>git branch -D (branch name)</li>
+          <!-- Muda para uma branch específica do repositório Git -->
           <li>git checkout (branch name)</li>
+          <!-- Cria uma nova branch e muda para ela -->
           <li>git checkout -b (branch name)</li>
+          <!-- Faz um merge de uma branch específica na branch atual -->
           <li>git merge (branch name)</li>
+          <!-- Faz um push para uma branch específica do repositório remoto -->
           <li>git push origin (branch name)</li>
+          <!-- Faz um push para uma branch específica do repositório remoto e a configura como upstream -->
           <li>git push -u origin (branch name)</li>
+          <!-- Atualiza as referências do repositório remoto -->
           <li>git fetch</li>
+
+          <!-- Limpa o cache do Git e remove o arquivo do GitHub -->
           <li>
             git rm -r --cached . (clear cached Git and remove file GitHub)
           </li>
         </ol>
 
         <ul>
+          <!-- Arquivos que ainda não são monitorados pelo GIT -->
           <li>
             <strong>U</strong> (Untracked): São os arquivos que ainda não são
             monitorados pelo GIT.
           </li>
+          <!-- Arquivos que já foram commitados e agora foram modificados -->
           <li>
             <strong>M</strong> (Modified): Arquivos que já foram commitados e
             agora foram modificados.
           </li>
+          <!-- Arquivos que ainda não foram commitados mas já rodou git add -->
           <li>
             <strong>A</strong> (Added): Arquivos que ainda não foram commitados
             mas já rodou git add.
           </li>
+          <!-- São arquivo que foram removidos -->
           <li>
             <strong>D</strong> (Deleted): São arquivo que foram removidos.
           </li>

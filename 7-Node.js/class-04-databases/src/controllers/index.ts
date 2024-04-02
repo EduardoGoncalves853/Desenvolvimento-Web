@@ -1,20 +1,27 @@
 import { Request, Response, NextFunction } from "express";
 import { sqliteConnection } from "../databases/sqlite3";
-import { randomUUID } from "node:crypto";
 import { compare, hash } from "bcrypt";
+import { userRepository } from "../repositories/userRepository";
 
 export const userControllers = {
   async create(req: Request, res: Response, next: NextFunction) {
     try {
       const { name, email, password } = req.body;
-      const uuid = randomUUID();
-      const db = await sqliteConnection();
-      const passwordHash = await hash(password, 10);
-      await db.run(
-        "INSERT INTO users (id ,name, email, password) VALUES (?, ?, ?, ?)",
-        [uuid, name, email, passwordHash]
-      );
-      return res.status(201).json({ message: "created!", id: uuid });
+
+      const userEmail = await userRepository.getByEmail(email);
+
+      if (userEmail)
+        throw res.status(400).json({
+          message: "email already exists",
+        });
+
+      const userCreated = await userRepository.create({
+        name,
+        email,
+        password,
+      });
+
+      return res.status(201).json({ message: "created!", ...userCreated });
     } catch (error) {
       return next(error);
     }
@@ -23,14 +30,15 @@ export const userControllers = {
     try {
       const { id } = req.params;
       const { password } = req.body;
-      const db = await sqliteConnection();
+
       // senha errada ↓
       if (!password) {
         throw res
           .status(400)
           .json({ message: "please confirm your password!" });
       }
-      const user = await db.get("SELECT * FROM users WHERE id = ?;", [id]);
+      const user = await userRepository.getByID(id);
+
       // usuário diferente ↓
       if (!user) {
         throw res.status(404).json({ message: "User not found" });
@@ -52,42 +60,60 @@ export const userControllers = {
     try {
       const { id } = req.params;
       const { name, email, password, newPassword } = req.body;
-      const db = await sqliteConnection();
+      //* ↓
+      const user = await userRepository.getByID(id);
 
-      const user = await db.get("SELECT * FROM users WHERE id= ?", [id]);
       if (!user)
         throw res.status(404).json({
           message: "user not found!",
         });
-
+      //* ↓
       const passwordCheck = await compare(password, user.password);
 
       if (!passwordCheck) {
         throw res.status(401).json({ message: "invalid password!" });
       }
 
-      const userEmail = await db.get("SELECT * FROM users WHERE email= ?", [
-        email,
-      ]);
+      const userEmail = await userRepository.getByEmail(email);
+
       if (userEmail && userEmail.id != id)
         throw res.status(400).json({
           message: "email already exists",
         });
 
-      const updateQuery = `
-      UPDATE users
-      SET name = ?, email = ?, password = ?, updated_at = DATETIME('now')
-      WHERE id = ?
-      `;
+      const UserUpdated = await userRepository.update({
+        id,
+        name,
+        email,
+        password,
+        newPassword,
+      });
 
-      const passwordHash = await hash(newPassword, 10);
-      await db.run(updateQuery, [name, email, passwordHash, id]);
-      return res.status(200).json({message: "user updated!"})
+      return res.status(201).json(UserUpdated);
     } catch (error) {
       return next(error);
     }
   },
-  delete(req: Request, res: Response) {
-    res.send({ message: "deleted!" });
+  async delete(req: Request, res: Response, next: NextFunction) {
+    try {
+      const { id } = req.params;
+      const { password } = req.body;
+
+      const user = await userRepository.getByID(id);
+      if (!user)
+        throw res.status(404).json({
+          message: "user not found!",
+        });
+
+      const passwordCheck = await compare(password, user.password);
+      if (!passwordCheck) {
+        throw res.status(401).json({ message: "invalid password!" });
+      }
+
+      const userDeleted = await userRepository.delete(id);
+      return res.status(200).send(userDeleted);
+    } catch (error) {
+      return next(error);
+    }
   },
 };
