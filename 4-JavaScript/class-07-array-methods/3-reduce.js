@@ -1,8 +1,8 @@
 // variável ArrayNumbers
 const ArrayNumbers = [4, 6, 8, 10, 12, 14];
-
-//?__________________
+44;
 // cria uma constante que soma o número do array presente com o valor passado
+//?__________________
 const sumArrayNumbers = ArrayNumbers.reduce((prevValue, currentValue) => {
   let count = 0;
 
@@ -13,8 +13,8 @@ const sumArrayNumbers = ArrayNumbers.reduce((prevValue, currentValue) => {
   return count;
 });
 console.log(sumArrayNumbers); // 14
-//?__________________
 
+//?__________________
 const shoppingCart = [
   { product: "Arroz", amount: 2, price: 20 },
   { product: "Café", amount: 3, price: 40 },
