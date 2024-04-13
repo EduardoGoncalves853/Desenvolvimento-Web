@@ -11,7 +11,7 @@ export function roleAuthorizationMiddleware(role: Roles[]) {
       }
       return next();
     } catch (error) {
-        return next(error)
+      return next(error);
     }
   };
 }

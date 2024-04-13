@@ -7,4 +7,4 @@ export const salesRoutes = Router();
 
 salesRoutes.use(authMiddleware, roleAuthorizationMiddleware(["admin"]));
 
-salesRoutes.post("/sales", salesControllers.read);
+salesRoutes.get("/sales", salesControllers.read);
