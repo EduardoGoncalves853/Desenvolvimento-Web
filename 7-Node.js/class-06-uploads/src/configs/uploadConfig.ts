@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
   destination: UPLOADS_FOLDERS,
   filename(_req, file, callback) {
     const hash = crypto.randomBytes(10).toString("hex");
-    const fileName = `${hash}_${file.originalname}`;
+    const fileName = `${hash}_${file.originalname.replaceAll("", "_")}`;
     return callback(null, fileName);
   },
 });
@@ -23,17 +23,15 @@ const fileFilter = (
 
   if (formatFiles.includes(file.mimetype)) return callback(null, true);
 
-  const error = new Error("invalid image type!") as Error & {status: number};
+  const error = new Error("invalid image type!") as Error & { status: number };
   error.status = 400;
-  if (callback){
-      callback(error, false)
+  if (callback) {
+    callback(error, false);
   }
 };
 
 export const MULTER = {
- storage,
- fileFilter,
- limits: {
-    fileSize: 1024 * 1024 * 2 // 2MB
-}   
-}
+  storage,
+  fileFilter,
+  limits: { fileSize: 1024 * 1024 * 2 },
+}; // 2MB

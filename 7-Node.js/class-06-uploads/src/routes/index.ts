@@ -1,6 +1,6 @@
 import { Router } from "express";
 import multer from "multer";
-import { fileControllers } from "../controllers/userControllers";
+import { fileControllers } from "../controllers/fileControllers";
 import { MULTER } from "../configs/uploadConfig";
 // import { appErros } from "../middlewares/app.Errors";
 
